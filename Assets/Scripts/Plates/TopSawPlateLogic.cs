@@ -20,14 +20,6 @@ public class TopSawPlateLogic : MonoBehaviour
 		MoveTowardsBottom();
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.tag.Equals("Player") && _isLevelStarted)
-		{
-			other.gameObject.GetComponentInParent<PlayerLogic>().DestroyPlayer();
-		}
-	}
-
 	void MoveTowardsBottom()
 	{
 		transform.DOMoveY(0, sawSpeed).SetSpeedBased(true).SetEase(Ease.Linear);

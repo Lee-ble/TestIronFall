@@ -18,7 +18,10 @@ public class LevelEndingManager : MonoBehaviour
 	{
 		endingView.gameObject.SetActive(true);
 		endingView.PositiveEnding();
-		CoinScoreManager.Instance.SavePlayerCoins();
+		if (CoinScoreManager.Instance != null)
+		{
+			CoinScoreManager.Instance.SavePlayerCoins();
+		}
 	}
 	
 	private void NegativeEnding()

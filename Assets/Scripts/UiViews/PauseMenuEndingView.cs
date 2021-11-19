@@ -16,7 +16,7 @@ public class PauseMenuEndingView : MonoBehaviour
 
 	private void Start()
 	{
-		tryAgainButton.onClick.AddListener(() => { SceneManager.LoadScene(1); });
+		tryAgainButton.onClick.AddListener(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); });
 		goToMainMenuButton.onClick.AddListener(() => { SceneManager.LoadScene(0); });
 	}
 

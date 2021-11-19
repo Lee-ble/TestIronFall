@@ -21,18 +21,18 @@ public class PlayerManager : MonoBehaviour
 
 	[SerializeField] private GameObject playerObjectPrefab;
 	[SerializeField] private GameObject firstPlayerObject;
-	
-	private int _humansPerCurrentLevel = 0;
+	[SerializeField] private string bodyLocation;
+	[SerializeField] private int _maxPlayersPerCurrentLevel;
+
 	private List<PlayerLogic> _playersPoolList;
 	private List<Transform> _instantiatedPlayers;
 
 	void Start()
 	{
 		_instantiatedPlayers = new List<Transform>();
-		_instantiatedPlayers.Add(firstPlayerObject.transform.Find("Armature/Hips").transform);
-		_humansPerCurrentLevel = GameObject.FindObjectsOfType<HumanLogic>().Length;
+		_instantiatedPlayers.Add(firstPlayerObject.transform.Find(bodyLocation).transform);
 		_playersPoolList = new List<PlayerLogic>();
-		for (int i = 0; i < _humansPerCurrentLevel; i++)
+		for (int i = 0; i < _maxPlayersPerCurrentLevel; i++)
 		{
 			PlayerLogic createdPlayer = Instantiate(playerObjectPrefab).GetComponent<PlayerLogic>();
 			createdPlayer.gameObject.SetActive(false);
@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour
 		{
 			GameObject returnedPlayer = _playersPoolList[0].gameObject;
 			_playersPoolList.RemoveAt(0);
-			_instantiatedPlayers.Add(returnedPlayer.transform.Find("Armature/Hips").transform);
+			_instantiatedPlayers.Add(returnedPlayer.transform.Find(bodyLocation).transform);
 			return returnedPlayer;
 		}
 		else
@@ -66,13 +66,27 @@ public class PlayerManager : MonoBehaviour
 		return sum;
 	}
 	
+	public float GetLowestPlayerY()
+	{
+		float lowestY = 3000f;
+
+		foreach (Transform transform in _instantiatedPlayers)
+		{
+			if (lowestY > transform.position.y)
+			{
+				lowestY = transform.position.y;
+			}
+		}
+		return lowestY;
+	}
+
 	public int GetPlayersAmount()
 	{
 		return _instantiatedPlayers.Count;
 	}
 	public void RemovePlayer(Transform transform)
 	{
-		_instantiatedPlayers.Remove(transform.Find("Armature/Hips").transform);
+		_instantiatedPlayers.Remove(transform.Find(bodyLocation).transform);
 		if (_instantiatedPlayers.Count == 0)
 		{
 			if (EventManager.Instance != null)

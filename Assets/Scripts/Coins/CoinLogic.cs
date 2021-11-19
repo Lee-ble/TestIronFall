@@ -6,11 +6,11 @@ public class CoinLogic : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag.Equals("Player"))
+		if (other.tag.Equals("Player") || other.tag.Equals("PlayerCenter"))
 		{
 			if (EventManager.Instance != null)
 			{
-				EventManager.Instance.CoinPickedUp(coinValue);
+				//EventManager.Instance.CoinPickedUp(coinValue);
 			}
 			CoinDestroy();
 		}

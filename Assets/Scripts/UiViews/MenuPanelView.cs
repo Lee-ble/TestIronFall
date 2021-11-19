@@ -13,7 +13,7 @@ public class MenuPanelView : MonoBehaviour
 
 	private void Start()
 	{
-		playButton.onClick.AddListener(() => { SceneManager.LoadScene(1); });
+		playButton.onClick.AddListener(() => { SceneManager.LoadScene(2); });
 		shopButton.onClick.AddListener(() => { shopPanel.SetActive(true); gameObject.SetActive(false); playerShopObject.SetActive(true);  });
 		exitButton.onClick.AddListener(() => { Application.Quit(); });
 	}

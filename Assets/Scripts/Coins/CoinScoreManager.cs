@@ -54,7 +54,7 @@ public class CoinScoreManager : MonoBehaviour
 		_currentLevelCoinsAmount += coinsAmount;
 		if (EventManager.Instance != null)
 		{
-			EventManager.Instance.CoinsAmountChanged(this._currentLevelCoinsAmount);
+			//EventManager.Instance.CoinsAmountChanged(this._currentLevelCoinsAmount);
 		}
 	}
 

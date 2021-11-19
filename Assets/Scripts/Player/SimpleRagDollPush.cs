@@ -14,6 +14,20 @@ public class SimpleRagDollPush : MonoBehaviour
 		}
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			dollRigidbody.AddForce(Vector3.left * forceSidePower, ForceMode.Impulse);
+			dollRigidbody.AddForce(Vector3.left * forceUpPower, ForceMode.Impulse);
+		}
+		else if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			dollRigidbody.AddForce(Vector3.right * forceSidePower, ForceMode.Impulse);
+			dollRigidbody.AddForce(Vector3.up * forceUpPower, ForceMode.Impulse);
+		}
+	}
+
 	private void OnSwipe(int direction)
 	{
 		if (direction == -1)
@@ -26,6 +40,11 @@ public class SimpleRagDollPush : MonoBehaviour
 			dollRigidbody.AddForce(Vector3.right * forceSidePower, ForceMode.Impulse);
 			dollRigidbody.AddForce(Vector3.up * forceUpPower, ForceMode.Impulse);
 		}
+	}
+
+	private void OnEnable()
+	{
+		dollRigidbody.AddForce(Vector3.up * forceUpPower, ForceMode.Impulse);
 	}
 
 	private void OnDestroy()
