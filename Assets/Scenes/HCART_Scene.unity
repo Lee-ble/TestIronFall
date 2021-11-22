@@ -743,6 +743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Patrol Saw
       objectReference: {fileID: 0}
+    - target: {fileID: 2729925781283129086, guid: 703b3d19bec5d3a488c04ee354498559, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.217
+      objectReference: {fileID: 0}
     - target: {fileID: 3087933762776332583, guid: 703b3d19bec5d3a488c04ee354498559, type: 3}
       propertyPath: m_RootOrder
       value: 6
