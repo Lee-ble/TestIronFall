@@ -88,7 +88,7 @@ public class MultiplierPlate : MonoBehaviour
 	}
 	private void HidePlate()
 	{
-		this.gameObject.SetActive(false);
+		transform.parent.gameObject.SetActive(false);
 	}
 
 }
