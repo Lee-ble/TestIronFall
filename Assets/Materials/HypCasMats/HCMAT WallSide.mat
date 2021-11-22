@@ -94,7 +94,7 @@ Material:
     - _RampSmooth: 0.187
     - _RampThreshold: 0.472
     - _RimPower: 10
-    - _Shininess: 0
+    - _Shininess: 0.646
     - _SmoothnessTextureChannel: 0
     - _SpecIntensity: 0.211
     - _SpecSmooth: 0
@@ -103,11 +103,11 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.18431371, g: 0.33428556, b: 0.90588236, a: 1}
+    - _Color: {r: 0.3537736, g: 0.4872334, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _SColor: {r: 0.7294118, g: 0.53333336, b: 0.83137256, a: 1}
     - _ShadowTint: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
