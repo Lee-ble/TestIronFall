@@ -10,7 +10,7 @@ public class CoinLogic : MonoBehaviour
 		{
 			if (EventManager.Instance != null)
 			{
-				//EventManager.Instance.CoinPickedUp(coinValue);
+				EventManager.Instance.CoinPickedUp(coinValue);
 			}
 			CoinDestroy();
 		}

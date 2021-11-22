@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Laser
   - Saw
+  - Missile
+  - PlayerCenter
+  - Wall
   layers:
   - Default
   - TransparentFX

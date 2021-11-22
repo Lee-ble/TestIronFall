@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628ef0b07c057cd499f46cc056648f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectSwipeAfterRelease: 1
+  detectSwipeAfterRelease: 0
   SWIPE_THRESHOLD: 100

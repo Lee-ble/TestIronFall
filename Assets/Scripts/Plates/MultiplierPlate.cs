@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MultiplierPlate : MonoBehaviour
@@ -8,8 +7,21 @@ public class MultiplierPlate : MonoBehaviour
 	[SerializeField] private int num;
 	[SerializeField] private Vector3 maxOffset;
 	[SerializeField] private Vector3 constOffset;
+	[SerializeField] private TMP_Text label;
 
 	private bool _alreadyTriggered = false;
+
+	private void Start()
+	{
+		if (isMultiplier)
+		{
+			label.text = "x" + num.ToString();
+		}
+		else
+		{
+			label.text = "+" + num.ToString();
+		}
+	}
 
 	/*
 	private void OnTriggerEnter(Collider other)
@@ -36,7 +48,7 @@ public class MultiplierPlate : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (!_alreadyTriggered && collision.gameObject.tag.Equals("Player"))
+		if (!_alreadyTriggered && (collision.gameObject.tag.Equals("Player") || collision.gameObject.tag.Equals("PlayerCenter")))
 		{
 			if (PlayerManager.Instance != null)
 			{

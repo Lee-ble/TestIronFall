@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118ebc28a274c4849ba338b7a9803172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObjectPrefab: {fileID: 3802205316048984443, guid: 0a2cf81241b3f204e9e29a552428ee2b, type: 3}
+  playerObjectPrefab: {fileID: 2441060332927793486, guid: 8ace14a6150054e4094655240157f640, type: 3}
   firstPlayerObject: {fileID: 0}
-  bodyLocation: Skelet.c/root/pelvis
+  bodyLocation: VoodooCustomCharacterV1.3/mixamorig:Hips
   _maxPlayersPerCurrentLevel: 33

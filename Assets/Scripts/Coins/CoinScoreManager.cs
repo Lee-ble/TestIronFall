@@ -33,6 +33,7 @@ public class CoinScoreManager : MonoBehaviour
 
 	private void Start()
 	{
+		Application.targetFrameRate = 60;	
 		SceneManager.sceneLoaded += Restart;
 	}
 

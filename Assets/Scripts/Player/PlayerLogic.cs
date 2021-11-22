@@ -11,13 +11,20 @@ public class PlayerLogic : MonoBehaviour
 	{
 		particle.gameObject.SetActive(true);
 		particle.Play();
-		GameObject gameObject = Instantiate(particle.gameObject);
-		gameObject.transform.position = spawnTransform.position;
-		gameObject.GetComponent<ParticleSystem>().Play();
+		GameObject particleGameObject = Instantiate(particle.gameObject);
+		particleGameObject.transform.position = spawnTransform.position;
+		particleGameObject.GetComponent<ParticleSystem>().Play();
+		StartCoroutine(destroyParticle(particleGameObject.GetComponent<ParticleSystem>().main.duration, particleGameObject));
 		this.gameObject.SetActive(false);
 		if (PlayerManager.Instance != null)
 		{
 			PlayerManager.Instance.RemovePlayer(transform);
 		}
+	}
+
+	IEnumerator destroyParticle(float duration, GameObject particleGameObject)
+	{
+		yield return new WaitForSeconds(duration);
+		Destroy(particleGameObject);
 	}
 }
