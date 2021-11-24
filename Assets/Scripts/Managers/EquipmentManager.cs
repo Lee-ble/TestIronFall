@@ -94,7 +94,7 @@ public class EquipmentManager : MonoBehaviour
 public class EquipmentSettings
 {
 	public GameObject EqPrefab;
-	public Quaternion EqQuaternion;
+	public Vector3 EqEulerQuaternion;
 	public Vector3 Scale;
 	public Vector3 Offset;
 	public BodyPart BodyPart;

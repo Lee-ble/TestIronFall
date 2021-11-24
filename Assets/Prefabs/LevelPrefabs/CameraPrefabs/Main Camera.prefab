@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8237324112642661609}
-  m_LocalRotation: {x: 0.0000000059305107, y: 0.952017, z: -0.30604526, w: 0.000000018448084}
-  m_LocalPosition: {x: -0.00000026226832, y: 2.5, z: 89.94}
+  m_LocalRotation: {x: 0.000000007827278, y: 0.99387795, z: -0.11048391, w: 0.000000070411694}
+  m_LocalPosition: {x: -0.00000026226832, y: 2.5, z: 110.53999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8237324112944935692}
@@ -228,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8237324113014029856}
   m_LocalRotation: {x: 0.000000014880461, y: 0.9402716, z: -0.3404253, w: 0.00000004110058}
-  m_LocalPosition: {x: -0.00000026226832, y: 2.5, z: 89.94}
+  m_LocalPosition: {x: -0.00000026226832, y: 2.5, z: 110.53999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8237324113423971258}
@@ -343,9 +343,9 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 34.809307
-  orthographic: 0
-  orthographic size: 10
+  field of view: 17.681374
+  orthographic: 1
+  orthographic size: 25.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -424,8 +424,8 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 34.809307
-    OrthographicSize: 10
+    FieldOfView: 17.681374
+    OrthographicSize: 25.4
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: -44.6}
+  m_TrackedObjectOffset: {x: 0, y: 0, z: -65.2}
   m_LookaheadTime: 1
   m_LookaheadSmoothing: 30
   m_LookaheadIgnoreY: 0
@@ -677,8 +677,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8237324114086748161}
-  m_LocalRotation: {x: 0.000000014130403, y: 0.9463082, z: -0.32326588, w: 0.000000041364448}
-  m_LocalPosition: {x: -0.00000026226832, y: 2.5, z: 89.94}
+  m_LocalRotation: {x: 0.00000000962551, y: 0.97545344, z: -0.22020598, w: 0.000000042638426}
+  m_LocalPosition: {x: -0.00000026226832, y: 2.5, z: 110.53999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8237324114198103117}

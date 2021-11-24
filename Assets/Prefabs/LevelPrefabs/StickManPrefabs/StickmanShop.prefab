@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfc214733b9e9b4e989950ba2c8dc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headParent: {fileID: 6774857730530278195}
+  headParent: {fileID: 8600870406167723997}
   bodyParent: {fileID: 4916207917303826724}
   leftArmParent: {fileID: 7580766359207456930}
   rightArmParent: {fileID: 3202152059319679987}
@@ -472,9 +472,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -1812909498023395591, guid: 3bf626041b0e848e8917535734a4e638, type: 3}
   m_PrefabInstance: {fileID: 1144770534960565851}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6774857730530278195 stripped
+--- !u!4 &8600870406167723997 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -3321919801592875672, guid: 3bf626041b0e848e8917535734a4e638, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8700783698680967558, guid: 3bf626041b0e848e8917535734a4e638, type: 3}
   m_PrefabInstance: {fileID: 1144770534960565851}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &3202152059319679987 stripped

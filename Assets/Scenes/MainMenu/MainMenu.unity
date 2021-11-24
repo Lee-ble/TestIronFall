@@ -770,11 +770,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362458802}
   m_CullTransparentMesh: 1
---- !u!4 &388090735 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8600870406167723997, guid: 20b55fd9c07ab4c4c918e6fe57eab9fd, type: 3}
-  m_PrefabInstance: {fileID: 4668592109889759939}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &508129793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,16 +1211,25 @@ MonoBehaviour:
   - ClearEquipment: 0
     EquipmentSettings:
     - EqPrefab: {fileID: 7521859390200831886, guid: 7e1089caba3f18a4fa529776c44f7fd8, type: 3}
-      EqQuaternion: {x: 0, y: 180, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       Offset: {x: 0, y: 0.8, z: 0}
       BodyPart: 0
     Price: 10
     Name: CowboyHat
+  - ClearEquipment: 0
+    EquipmentSettings:
+    - EqPrefab: {fileID: 7319579808246317741, guid: 8e6d90f6513e5824991c2f8dc9a1d0b6, type: 3}
+      EqEulerQuaternion: {x: 0, y: 180, z: 0}
+      Scale: {x: 1.3, y: 1.3, z: 1.3}
+      Offset: {x: 0, y: 0, z: 0}
+      BodyPart: 0
+    Price: 0
+    Name: IronHelmet
   - ClearEquipment: 1
     EquipmentSettings:
     - EqPrefab: {fileID: 0}
-      EqQuaternion: {x: 0, y: 180, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 0, y: 0, z: 0}
       Offset: {x: 0, y: 0, z: 0}
       BodyPart: 0
@@ -1235,17 +1239,17 @@ MonoBehaviour:
   - ClearEquipment: 0
     EquipmentSettings:
     - EqPrefab: {fileID: 2135072792611510695, guid: c2b56456c21976f41ba6d573c325e933, type: 3}
-      EqQuaternion: {x: 0, y: 0, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 0.5, y: 0.5, z: 0.5}
       Offset: {x: 0, y: 0, z: 0}
       BodyPart: 1
     - EqPrefab: {fileID: 6984037240286264257, guid: d3eb8642bcefbda44a6ab5e43d072fb8, type: 3}
-      EqQuaternion: {x: 0, y: 0, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 0.3, y: 0.3, z: 0.3}
       Offset: {x: 0, y: 0, z: 0}
       BodyPart: 3
     - EqPrefab: {fileID: 5422130723471661032, guid: 6de5af1a6a2bf45458bc313749cd22cd, type: 3}
-      EqQuaternion: {x: 0, y: 0, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 0.3, y: 0.3, z: 0.3}
       Offset: {x: 0, y: 0, z: 0}
       BodyPart: 2
@@ -1254,22 +1258,41 @@ MonoBehaviour:
   - ClearEquipment: 1
     EquipmentSettings:
     - EqPrefab: {fileID: 0}
-      EqQuaternion: {x: 0, y: 0, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 0, y: 0, z: 0}
       Offset: {x: 0, y: 0, z: 0}
       BodyPart: 2
     - EqPrefab: {fileID: 0}
-      EqQuaternion: {x: 0, y: 0, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 0, y: 0, z: 0}
       Offset: {x: 0, y: 0, z: 0}
       BodyPart: 3
     - EqPrefab: {fileID: 0}
-      EqQuaternion: {x: 0, y: 0, z: 0, w: 0}
+      EqEulerQuaternion: {x: 0, y: 0, z: 0}
       Scale: {x: 0, y: 0, z: 0}
       Offset: {x: 0, y: 0, z: 0}
       BodyPart: 1
     Price: 0
     Name: Nothing
+  - ClearEquipment: 0
+    EquipmentSettings:
+    - EqPrefab: {fileID: 2846649834577690390, guid: 37823a1e42f6a7544bd75f1c79b66031, type: 3}
+      EqEulerQuaternion: {x: 0, y: 0, z: 180}
+      Scale: {x: 1.01, y: 1.01, z: 1.01}
+      Offset: {x: -0.12, y: -0.2, z: -0.1}
+      BodyPart: 2
+    - EqPrefab: {fileID: 1543447624738104049, guid: 80f2ff052e0073b4db162562452f652e, type: 3}
+      EqEulerQuaternion: {x: 0, y: -90, z: 90}
+      Scale: {x: 1, y: 1, z: 1}
+      Offset: {x: -0.15, y: 0.1, z: 0}
+      BodyPart: 3
+    - EqPrefab: {fileID: 8820281820287424979, guid: 5613b756531669f458e99cb25a16331b, type: 3}
+      EqEulerQuaternion: {x: 0, y: 180, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      Offset: {x: 0, y: 0.18, z: 0}
+      BodyPart: 1
+    Price: 0
+    Name: IronArmor
   EquipmentList: []
 --- !u!4 &736447093
 Transform:
@@ -3643,10 +3666,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5193714516589383307, guid: 20b55fd9c07ab4c4c918e6fe57eab9fd, type: 3}
-      propertyPath: headParent
-      value: 
-      objectReference: {fileID: 388090735}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b55fd9c07ab4c4c918e6fe57eab9fd, type: 3}
 --- !u!4 &5704127193416854115 stripped

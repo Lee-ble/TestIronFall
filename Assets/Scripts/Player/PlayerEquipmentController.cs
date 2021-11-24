@@ -35,36 +35,44 @@ public class PlayerEquipmentController : MonoBehaviour
 				case BodyPart.Arms:
 					GameObject leftArmObject = Instantiate(equipment.EqPrefab,
 						new Vector3(leftArmParent.position.x - equipment.Offset.x, leftArmParent.position.y + equipment.Offset.y,
-						leftArmParent.position.z + equipment.Offset.z), equipment.EqQuaternion, leftArmParent);
+						leftArmParent.position.z + equipment.Offset.z),
+						Quaternion.identity,
+						leftArmParent);
+					leftArmObject.transform.localRotation = Quaternion.Euler(equipment.EqEulerQuaternion);
 					leftArmObject.transform.localScale = equipment.Scale;
 					_instantiatedEquipment.Add(BodySpawnPart.LeftArm, leftArmObject);
 					GameObject rightArmObject = Instantiate(equipment.EqPrefab,
 						new Vector3(rightArmParent.position.x + equipment.Offset.x, rightArmParent.position.y + equipment.Offset.y,
-						rightArmParent.position.z + equipment.Offset.z), equipment.EqQuaternion, rightArmParent);
+						rightArmParent.position.z - equipment.Offset.z),
+						Quaternion.identity,
+						rightArmParent);
+					rightArmObject.transform.localRotation = Quaternion.Euler(equipment.EqEulerQuaternion);
 					rightArmObject.transform.localScale = equipment.Scale;
 					_instantiatedEquipment.Add(BodySpawnPart.RightArm, rightArmObject);
 					break;
 				case BodyPart.Body:
 					GameObject bodyObject = Instantiate(equipment.EqPrefab, bodyParent.position + equipment.Offset, 
-						equipment.EqQuaternion, bodyParent);
+						Quaternion.Euler(equipment.EqEulerQuaternion), bodyParent);
 					bodyObject.transform.localScale = equipment.Scale;
 					_instantiatedEquipment.Add(BodySpawnPart.Body, bodyObject);
 					break;
 				case BodyPart.Head:
 					GameObject headObject = Instantiate(equipment.EqPrefab, headParent.position + equipment.Offset,
-						equipment.EqQuaternion, headParent);
+						Quaternion.Euler(equipment.EqEulerQuaternion), headParent);
 					headObject.transform.localScale = equipment.Scale;
 					_instantiatedEquipment.Add(BodySpawnPart.Head, headObject);
 					break;
 				case BodyPart.Legs:
 					GameObject leftLegObject = Instantiate(equipment.EqPrefab,
 						new Vector3(leftLegParent.position.x - equipment.Offset.x, leftLegParent.position.y + equipment.Offset.y,
-						leftLegParent.position.z + equipment.Offset.z), equipment.EqQuaternion, leftLegParent);
-					leftLegObject.transform.localScale = equipment.Scale;
+						leftLegParent.position.z + equipment.Offset.z), Quaternion.identity, leftLegParent);
+					leftLegObject.transform.rotation = Quaternion.Euler(equipment.EqEulerQuaternion);
+					leftLegObject.transform.localScale = -equipment.Scale;
 					_instantiatedEquipment.Add(BodySpawnPart.LeftLeg, leftLegObject);
 					GameObject rightLegObject = Instantiate(equipment.EqPrefab, 
 						new Vector3(rightLegParent.position.x + equipment.Offset.x, rightLegParent.position.y + equipment.Offset.y, 
-						rightLegParent.position.z + equipment.Offset.z), equipment.EqQuaternion, rightLegParent);
+						rightLegParent.position.z + equipment.Offset.z), Quaternion.identity, rightLegParent);
+					rightLegObject.transform.localRotation = Quaternion.Euler(equipment.EqEulerQuaternion);
 					rightLegObject.transform.localScale = equipment.Scale;
 					_instantiatedEquipment.Add(BodySpawnPart.RightLeg, rightLegObject);
 					break;
