@@ -23,10 +23,10 @@ public class ShopManager : MonoBehaviour
 	private void Start()
 	{
 		shopItemOffers = new List<ShopItemView>();
-		armsButton.onClick.AddListener(() => PopulateScroll(BodyPart.Arms));
+		//armsButton.onClick.AddListener(() => PopulateScroll(BodyPart.Arms));
 		headButton.onClick.AddListener(() => PopulateScroll(BodyPart.Head));
 		bodyButton.onClick.AddListener(() => PopulateScroll(BodyPart.Body));
-		legsButton.onClick.AddListener(() => PopulateScroll(BodyPart.Legs));
+		//legsButton.onClick.AddListener(() => PopulateScroll(BodyPart.Legs));
 		backButton.onClick.AddListener(() => { menuPanel.SetActive(true); gameObject.SetActive(false); playerEquipment.gameObject.SetActive(false); });
 
 		if (CoinScoreManager.Instance != null)
@@ -47,18 +47,18 @@ public class ShopManager : MonoBehaviour
 		List<ShopItemModel> models = new List<ShopItemModel>();
 		switch (bodyPart)
 		{
-			case BodyPart.Arms:
-				models = EquipmentManager.Instance.ArmsModels;
-				break;
+			//case BodyPart.Arms:
+			//	models = EquipmentManager.Instance.ArmsModels;
+			//	break;
 			case BodyPart.Body:
 				models = EquipmentManager.Instance.BodyModels;
 				break;
 			case BodyPart.Head:
 				models = EquipmentManager.Instance.HeadModels;
 				break;
-			case BodyPart.Legs:
-				models = EquipmentManager.Instance.LegsModels;
-				break;
+			//case BodyPart.Legs:
+			//	models = EquipmentManager.Instance.LegsModels;
+			//	break;
 		}
 		if (shopItemOffers.Count != 0)
 		{
@@ -87,7 +87,9 @@ public class ShopManager : MonoBehaviour
 [System.Serializable]
 public class ShopItemModel
 {
-	public EquipmentSettings EquipmentSettings;
+	//public EquipmentSettings EquipmentSettings;
+	public bool ClearEquipment;
+	public List<EquipmentSettings> EquipmentSettings;
 	public int Price;
 	public string Name;
 	public int IsPurchased { get { return PlayerPrefs.GetInt($"{Name}_IsPurchased"); }

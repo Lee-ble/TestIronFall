@@ -5,10 +5,12 @@ public class PlayerEquipmentController : MonoBehaviour
 {
 	[SerializeField] private Transform headParent;
 	[SerializeField] private Transform bodyParent;
-	[SerializeField] private Transform armsParent;
-	[SerializeField] private Transform legsParent;
+	[SerializeField] private Transform leftArmParent;
+	[SerializeField] private Transform rightArmParent;
+	[SerializeField] private Transform leftLegParent;
+	[SerializeField] private Transform rightLegParent;
 
-	private List<GameObject> _instantiatedEquipment  = new List<GameObject>();
+	private Dictionary<BodySpawnPart, GameObject> _instantiatedEquipment  = new Dictionary<BodySpawnPart, GameObject>();
 
 	void Start()
 	{
@@ -21,7 +23,7 @@ public class PlayerEquipmentController : MonoBehaviour
 		{
 			foreach (var instantiatedEquipment in _instantiatedEquipment)
 			{
-				Destroy(instantiatedEquipment);
+				Destroy(instantiatedEquipment.Value);
 			}
 			_instantiatedEquipment.Clear();
 		}
@@ -31,18 +33,57 @@ public class PlayerEquipmentController : MonoBehaviour
 			switch (equipment.BodyPart)
 			{
 				case BodyPart.Arms:
-					_instantiatedEquipment.Add(Instantiate(equipment.EqPrefab, armsParent.position + equipment.Offset, equipment.EqQuaternion, armsParent));
+					GameObject leftArmObject = Instantiate(equipment.EqPrefab,
+						new Vector3(leftArmParent.position.x - equipment.Offset.x, leftArmParent.position.y + equipment.Offset.y,
+						leftArmParent.position.z + equipment.Offset.z), equipment.EqQuaternion, leftArmParent);
+					leftArmObject.transform.localScale = equipment.Scale;
+					_instantiatedEquipment.Add(BodySpawnPart.LeftArm, leftArmObject);
+					GameObject rightArmObject = Instantiate(equipment.EqPrefab,
+						new Vector3(rightArmParent.position.x + equipment.Offset.x, rightArmParent.position.y + equipment.Offset.y,
+						rightArmParent.position.z + equipment.Offset.z), equipment.EqQuaternion, rightArmParent);
+					rightArmObject.transform.localScale = equipment.Scale;
+					_instantiatedEquipment.Add(BodySpawnPart.RightArm, rightArmObject);
 					break;
 				case BodyPart.Body:
-					_instantiatedEquipment.Add(Instantiate(equipment.EqPrefab, bodyParent.position + equipment.Offset, equipment.EqQuaternion, bodyParent));
+					GameObject bodyObject = Instantiate(equipment.EqPrefab, bodyParent.position + equipment.Offset, 
+						equipment.EqQuaternion, bodyParent);
+					bodyObject.transform.localScale = equipment.Scale;
+					_instantiatedEquipment.Add(BodySpawnPart.Body, bodyObject);
 					break;
 				case BodyPart.Head:
-					_instantiatedEquipment.Add(Instantiate(equipment.EqPrefab, headParent.position + equipment.Offset, equipment.EqQuaternion, headParent));
+					GameObject headObject = Instantiate(equipment.EqPrefab, headParent.position + equipment.Offset,
+						equipment.EqQuaternion, headParent);
+					headObject.transform.localScale = equipment.Scale;
+					_instantiatedEquipment.Add(BodySpawnPart.Head, headObject);
 					break;
 				case BodyPart.Legs:
-					_instantiatedEquipment.Add(Instantiate(equipment.EqPrefab, legsParent.position + equipment.Offset, equipment.EqQuaternion, legsParent));
+					GameObject leftLegObject = Instantiate(equipment.EqPrefab,
+						new Vector3(leftLegParent.position.x - equipment.Offset.x, leftLegParent.position.y + equipment.Offset.y,
+						leftLegParent.position.z + equipment.Offset.z), equipment.EqQuaternion, leftLegParent);
+					leftLegObject.transform.localScale = equipment.Scale;
+					_instantiatedEquipment.Add(BodySpawnPart.LeftLeg, leftLegObject);
+					GameObject rightLegObject = Instantiate(equipment.EqPrefab, 
+						new Vector3(rightLegParent.position.x + equipment.Offset.x, rightLegParent.position.y + equipment.Offset.y, 
+						rightLegParent.position.z + equipment.Offset.z), equipment.EqQuaternion, rightLegParent);
+					rightLegObject.transform.localScale = equipment.Scale;
+					_instantiatedEquipment.Add(BodySpawnPart.RightLeg, rightLegObject);
 					break;
 			}
 		}
 	}
+
+	public GameObject GetArmor(BodySpawnPart bodyPart)
+	{
+		return _instantiatedEquipment[bodyPart];
+	}
+}
+
+public enum BodySpawnPart
+{
+	Head = 0,
+	Body = 1,
+	LeftArm = 2,
+	RightArm = 3,
+	LeftLeg = 4,
+	RightLeg = 5
 }

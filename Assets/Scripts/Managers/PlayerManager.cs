@@ -95,4 +95,9 @@ public class PlayerManager : MonoBehaviour
 			}
 		}	
 	}
+
+	public void DestroyPlayer()
+	{
+		_instantiatedPlayers[0].gameObject.GetComponentInParent<PlayerLogic>().DestroyPlayer();
+	}
 }

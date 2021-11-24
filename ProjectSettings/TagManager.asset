@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Laser
-  - Saw
-  - Missile
   - PlayerCenter
   - Wall
+  - Armor
+  - TopDestroyer
   layers:
   - Default
   - TransparentFX
@@ -16,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Walls
+  - Armor
+  - Player
   - 
   - 
   - 

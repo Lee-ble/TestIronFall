@@ -6,6 +6,7 @@ using DG.Tweening;
 public class CameraTargetController : MonoBehaviour
 {
     [SerializeField] bool getLowest;
+    [SerializeField] float speed;
     private float _previousY = 10000f;
     private PlayerManager _simplePoolInstance;
     // Start is called before the first frame update
@@ -17,7 +18,11 @@ public class CameraTargetController : MonoBehaviour
         }
         
     }
-
+	/*private void OnEnable()
+	{
+        transform.DOMoveY(0, speed).SetSpeedBased(true).SetEase(Ease.Linear);
+	}
+	*/
 	private void Update()
 	{
         if (_simplePoolInstance.GetPlayersAmount() > 0)
@@ -40,4 +45,9 @@ public class CameraTargetController : MonoBehaviour
             }
         }
     }
+
+    private void CameraCoroutine()
+	{
+
+	}
 }

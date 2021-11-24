@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MultiplierPlate : MonoBehaviour
 {
-	[SerializeField] private bool isMultiplier;
+	[SerializeField] private MultiplierType multiplierType;
 	[SerializeField] private int num;
 	[SerializeField] private Vector3 maxOffset;
 	[SerializeField] private Vector3 constOffset;
@@ -13,13 +13,20 @@ public class MultiplierPlate : MonoBehaviour
 
 	private void Start()
 	{
-		if (isMultiplier)
+		switch (multiplierType)
 		{
-			label.text = "x" + num.ToString();
-		}
-		else
-		{
-			label.text = "+" + num.ToString();
+			case MultiplierType.Plus:
+				label.text = "+" + num.ToString();
+				break;
+			case MultiplierType.Minus:
+				label.text = "-" + num.ToString();
+				break;
+			case MultiplierType.Multiply:
+				label.text = "x" + num.ToString();
+				break;
+			case MultiplierType.Divide:
+				label.text = "/" + num.ToString();
+				break;
 		}
 	}
 
@@ -52,20 +59,38 @@ public class MultiplierPlate : MonoBehaviour
 		{
 			if (PlayerManager.Instance != null)
 			{
-				if (!isMultiplier)
+				switch (multiplierType)
 				{
-					for (int i = 0; i < num; i++)
-					{
-						CreateNewPlayer();
-					}
-				}	
-				else
-				{
-					int k = (num - 1) * PlayerManager.Instance.GetPlayersAmount();
-					for (int i = 0; i < k; i++)
-					{
-						CreateNewPlayer();
-					}
+					case MultiplierType.Plus:
+						for (int i = 0; i < num; i++)
+						{
+							CreateNewPlayer();
+						}
+						break;
+					case MultiplierType.Multiply:
+						int k = (num - 1) * PlayerManager.Instance.GetPlayersAmount();
+						for (int i = 0; i < k; i++)
+						{
+							CreateNewPlayer();
+						}
+						break;
+					case MultiplierType.Minus:
+						for (int i = 0; i < num; i++)
+						{
+							RemoveRandomPlayer();
+						}
+						break;
+					case MultiplierType.Divide:
+						int l = PlayerManager.Instance.GetPlayersAmount() - (int) PlayerManager.Instance.GetPlayersAmount() / num;
+						if (l == PlayerManager.Instance.GetPlayersAmount())
+						{
+							l -= 1;
+						}
+						for (int i = 0; i < l; i++)
+						{
+							RemoveRandomPlayer();
+						}
+						break;
 				}
 				_alreadyTriggered = true;
 				HidePlate();
@@ -86,9 +111,26 @@ public class MultiplierPlate : MonoBehaviour
 			createdPlayer.transform.rotation = transform.rotation;
 		}
 	}
+
+	private void RemoveRandomPlayer()
+	{
+		if (PlayerManager.Instance != null && PlayerManager.Instance.GetPlayersAmount() > 0)
+		{
+			PlayerManager.Instance.DestroyPlayer();
+		}
+	}
+
 	private void HidePlate()
 	{
 		transform.parent.gameObject.SetActive(false);
+	}
+
+	public enum MultiplierType
+	{
+		Plus = 0,
+		Minus = 1,
+		Multiply = 2,
+		Divide =3
 	}
 
 }
