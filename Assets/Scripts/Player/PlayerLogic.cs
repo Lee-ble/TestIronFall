@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class PlayerLogic : MonoBehaviour
 {
 	[SerializeField] private PlayerEquipmentController playerEquipmentController;
-	[SerializeField] private Transform onArmorLostSpawnTransform;
+	[SerializeField] private Transform onArmorLostHeadSpawnTransform;
+	[SerializeField] private Transform onArmorLostBodySpawnTransform;
 	[SerializeField] private Transform onDeathSpawnTransform;
 
 	[SerializeField] private float iFrame;
@@ -36,7 +37,7 @@ public class PlayerLogic : MonoBehaviour
 
 					if (EffectsManager.Instance != null)
 					{
-						EffectsManager.Instance.SpawnParticles(onArmorLostSpawnTransform, EffectsManager.Instance.OnArmorLostParticles,
+						EffectsManager.Instance.SpawnParticles(onArmorLostHeadSpawnTransform, EffectsManager.Instance.OnArmorLostParticles,
 							EffectsManager.Instance.OnArmorLostParticlesScale);
 					}
 					_helmetRemoved = true;
@@ -52,6 +53,13 @@ public class PlayerLogic : MonoBehaviour
 					playerEquipmentController.GetArmor(BodySpawnPart.RightArm).GetComponent<IBreakable>().Break();
 					playerEquipmentController.GetArmor(BodySpawnPart.LeftLeg).GetComponent<IBreakable>().Break();
 					playerEquipmentController.GetArmor(BodySpawnPart.RightLeg).GetComponent<IBreakable>().Break();
+
+					if (EffectsManager.Instance != null)
+					{
+						EffectsManager.Instance.SpawnParticles(onArmorLostBodySpawnTransform, EffectsManager.Instance.OnArmorBodyLostParticles,
+							EffectsManager.Instance.OnArmorBodyLostParticlesScale);
+					}
+					
 					_bodyRemoved = true;
 				}
 			}

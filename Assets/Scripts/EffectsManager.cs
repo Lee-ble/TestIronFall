@@ -28,6 +28,9 @@ public class EffectsManager : MonoBehaviour
 	public ParticleSystem OnGroundHitParticles;
 	public Vector3 OnGroundHitParticlesScale;
 
+	public ParticleSystem OnArmorBodyLostParticles;
+	public Vector3 OnArmorBodyLostParticlesScale;
+
 	public void SpawnParticles(Transform pTransform, ParticleSystem particleSystem, Vector3 scale)
 	{
 		GameObject particleGameObject = Instantiate(particleSystem.gameObject);

@@ -1285,12 +1285,12 @@ MonoBehaviour:
     Name: Nothing
   - ClearEquipment: 0
     EquipmentSettings:
-    - EqPrefab: {fileID: 2846649834577690390, guid: 37823a1e42f6a7544bd75f1c79b66031, type: 3}
+    - EqPrefab: {fileID: 3799159785523735730, guid: 3b2723ebf819ccf47b265de2a8e42575, type: 3}
       EqEulerQuaternion: {x: 0, y: 0, z: 180}
       Scale: {x: 1.01, y: 1.01, z: 1.01}
       Offset: {x: -0.12, y: -0.2, z: -0.1}
       BodyPart: 2
-    - EqPrefab: {fileID: 1543447624738104049, guid: 80f2ff052e0073b4db162562452f652e, type: 3}
+    - EqPrefab: {fileID: 6077999766039517329, guid: f4533e99d61a9b74ca930d12763fb053, type: 3}
       EqEulerQuaternion: {x: 0, y: -90, z: 90}
       Scale: {x: 1, y: 1, z: 1}
       Offset: {x: -0.15, y: 0.1, z: 0}
