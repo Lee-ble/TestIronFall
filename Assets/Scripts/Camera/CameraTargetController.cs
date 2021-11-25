@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
-
+using Cinemachine;
 public class CameraTargetController : MonoBehaviour
 {
     [SerializeField] bool getLowest;
     [SerializeField] float speed;
+
     private float _previousY = 10000f;
     private PlayerManager _simplePoolInstance;
+
     // Start is called before the first frame update
     void Start()
     {

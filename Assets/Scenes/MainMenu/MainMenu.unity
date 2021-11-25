@@ -1235,6 +1235,15 @@ MonoBehaviour:
       BodyPart: 0
     Price: 0
     Name: Nothing
+  - ClearEquipment: 0
+    EquipmentSettings:
+    - EqPrefab: {fileID: 3786454751579612079, guid: a7de88d554d31c9489b91389a8dde96c, type: 3}
+      EqEulerQuaternion: {x: 0, y: 180, z: 0}
+      Scale: {x: 1.3, y: 1.3, z: 1.3}
+      Offset: {x: 0, y: 0, z: 0}
+      BodyPart: 0
+    Price: 0
+    Name: Broken
   BodyModels:
   - ClearEquipment: 0
     EquipmentSettings:
@@ -1286,7 +1295,7 @@ MonoBehaviour:
       Scale: {x: 1, y: 1, z: 1}
       Offset: {x: -0.15, y: 0.1, z: 0}
       BodyPart: 3
-    - EqPrefab: {fileID: 8820281820287424979, guid: 5613b756531669f458e99cb25a16331b, type: 3}
+    - EqPrefab: {fileID: 8716591338608989220, guid: 6c85d58f0407de845ac489718453b5f3, type: 3}
       EqEulerQuaternion: {x: 0, y: 180, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       Offset: {x: 0, y: 0.18, z: 0}
